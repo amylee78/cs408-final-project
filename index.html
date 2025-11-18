@@ -1,18 +1,175 @@
 <!doctype html>
-<html>
+<html lang="en-US">
 
 <head>
   <meta charset="utf-8">
-  <title>Hello World!</title>
+  <title>landing page</title>
   <meta name="description" content="">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="css/style.css">
 </head>
 
 <body>
-  <h1>HTML Rocks!</h1>
-  <img src="img/compile.jpeg">
-  <script type="module" src="js/main.js"></script>
+  <h1>The art of Amy Lee</h1>
+  <a href="index.html">home</a>
+ <a href="commission.html">commission</a>
+ <a href="cart.html">shopping cart</a>
+
+
+
+  <div class="section1">
+     <button id="load-data">Load all items</button>
+      <table id="loaded-items" >
+    <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Email</th>
+        <th>Topic</th>
+        <th>Description</th>
+        <th>Action</th>
+    </tr>
+</table>
+
+    </div>
+
+        <div class="section2">
+          <!-- This form field allows user to enter ID, Name, and Price -->
+     <h2>Commission inquiry</h2>
+     <form>
+        
+       <label for="new-name">  Name: </label>
+       <input type="text" id="new-name" name="name"  placeholder=" write full name here">
+       <br> <br>
+        <label for="new-email">Email </label>
+       <input type="text" id="new-email" name="email" placeholder="add email here">
+       <br> <br>
+       <label for="new-topic">Topic: </label>
+       <input type="text" id="new-topic" name="topic" placeholder="add numbers here">
+       <br><br>
+        <label for="new-description">Description: </label>
+        <br><br>
+      <textarea id="new-description" name="description" placeholder="write your questions here."></textarea>
+
+      <br> <br>
+     <button type="button" id="send-data">Add Items</button>
+    </div>
+
+        <p id="lambda-info">
+        <!-- loaded with AJAX -->
+    </p>
+
+
+   
+ <script>
+
+
+    document.getElementById("load-data").onclick = function () {
+            let xhr = new XMLHttpRequest();
+
+            xhr.addEventListener("load", function () {
+                let data = JSON.parse(xhr.responseText);
+                let table = document.getElementById("loaded-items");
+              
+                   // clears  row
+                while (table.rows.length > 1) {
+                    table.deleteRow(1);
+                }
+                // loops through each item and adds  it to the table
+                data.forEach(function (item) {
+                    
+                    
+                    let row = table.insertRow();
+                    let cellId = row.insertCell();
+                    let cellName = row.insertCell();
+                    let cellEmail = row.insertCell();
+                     let cellTopic = row.insertCell();
+                      let cellDescription = row.insertCell();
+                    let cellAction = row.insertCell();
+
+                    cellId.textContent = item.id;
+                    cellName.textContent = item.name;
+                    cellEmail.textContent = item.email;
+                     cellTopic.textContent = item.topic;
+                     cellDescription.textContent = item.description;
+
+                    //adds a delete button for each row/ new items added
+                    let btn = document.createElement("button");
+                    btn.textContent = "Delete";
+                    btn.onclick = function () { deleteItem(item.id); };
+                    cellAction.appendChild(btn);
+                });
+            });
+            //sends a GET request from the AWS API endpoint.
+            // triggers the load-data event once it responds
+            xhr.open("GET", "https://3xxc05472j.execute-api.us-east-2.amazonaws.com/inquiry");
+            xhr.send();
+        };
+
+       
+
+document.getElementById("send-data").onclick = function () {
+
+    // Generate ID
+   // let id = crypto.randomUUID();
+      let id = crypto.randomUUID().toString().substring(0, 5)
+
+    // Get user inputs
+    
+    let name = document.getElementById("new-name").value;
+    let email = document.getElementById("new-email").value;
+    let topic = document.getElementById("new-topic").value;
+    let description = document.getElementById("new-description").value;
+
+    // Create a new HTTP request
+    let xhr = new XMLHttpRequest();
+
+    // Send PUT request to your AWS endpoint
+    xhr.open("PUT", "https://3xxc05472j.execute-api.us-east-2.amazonaws.com/inquiry");
+    xhr.setRequestHeader("Content-Type", "application/json");
+
+    // Optional: response handler
+    xhr.addEventListener("load", function () {
+        alert("Your inquiry has been submitted!");
+    });
+
+    // Send data
+    xhr.send(JSON.stringify({
+        id: id,
+        name: name,
+        email: email,
+        topic: topic,
+        description: description
+    }));
+
+    // Clear input fields
+     document.getElementById("new-id").value = "";
+    document.getElementById("new-name").value = "";
+    document.getElementById("new-email").value = "";
+    document.getElementById("new-topic").value = "";
+    document.getElementById("new-description").value = "";
+};
+
+  function deleteItem(id) {
+            let xhr = new XMLHttpRequest();
+            //creates the Delete request and sends it to the aws endpoint and which ID to delte 
+            xhr.open("DELETE", "https://3xxc05472j.execute-api.us-east-2.amazonaws.com/inquiry" + "/" + id);
+              //loads the function after being deleted
+              xhr.addEventListener("load", function () {
+     
+                document.getElementById("load-data").click();
+              });
+            
+            xhr.send();
+            
+        }
+
+
+</script>
+
+
+
+
+ 
 </body>
 
 </html>

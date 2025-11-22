@@ -316,6 +316,11 @@
         return;
     }
 
+       if (!email.includes("@") || !email.includes(".com")  )
+    {
+       alert("email must contain a @ and a .com , please try again")
+    }
+
       xhr.send(JSON.stringify({
         id: id,
         name: name,

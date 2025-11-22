@@ -40,6 +40,7 @@
                 <th>ID</th>
                 <th>Type</th>
                 <th>Price</th>
+                <th>Description</th>
                 <th>Delete</th>
             </tr>
     
@@ -69,10 +70,12 @@
               let cellId = row.insertCell();
               let cellType = row.insertCell();
               let cellPrice = row.insertCell();
+              let cellDescription = row.insertCell();
               let cellAction = row.insertCell();
 
              cellId.textContent = item.id;
-             cellType.textContent = item.type;  
+             cellType.textContent = item.type; 
+             cellDescription.textContent = item.description; 
              cellPrice.textContent = `$${item.price}`;
 
             

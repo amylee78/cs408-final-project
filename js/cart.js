@@ -1,0 +1,61 @@
+  function loadCartItems() {
+        let xhr = new XMLHttpRequest();
+
+         xhr.addEventListener("load", function () {
+            let data = JSON.parse(xhr.responseText);
+            let table = document.getElementById("loaded-items");
+            let total = 0;
+
+       
+            while (table.rows.length > 1) {
+                  table.deleteRow(1);
+                }
+
+       
+            data.forEach(function (item) {
+              let row = table.insertRow();
+              let cellId = row.insertCell();
+              let cellType = row.insertCell();
+              let cellPrice = row.insertCell();
+              let cellDescription = row.insertCell();
+              let cellAction = row.insertCell();
+
+             cellId.textContent = item.id;
+             cellType.textContent = item.type; 
+             cellDescription.textContent = item.description; 
+             cellPrice.textContent = `$${item.price}`;
+
+            
+            let btn = document.createElement("button");
+            btn.textContent = "Delete";
+            btn.onclick = function () { deleteItem(item.id); };
+            cellAction.appendChild(btn);
+             total += item.price;
+        });
+
+           document.getElementById("total-price").textContent =
+            "Total: $" + total.toFixed(2);
+
+    });
+
+    xhr.open("GET", "https://27izq2bl24.execute-api.us-east-2.amazonaws.com/cart");
+    xhr.send();
+}
+
+  function deleteItem(id) {
+     let xhr = new XMLHttpRequest();
+      xhr.open("DELETE", `https://27izq2bl24.execute-api.us-east-2.amazonaws.com/cart/${id}`);
+      xhr.addEventListener("load", function () {
+        loadCartItems(); 
+         });
+     xhr.send();
+    }
+ 
+      
+    // Automatically load items when page loads
+      window.onload = loadCartItems;
+
+      
+
+
+

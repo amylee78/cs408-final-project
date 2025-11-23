@@ -45,3 +45,10 @@ table{
   text-align: left;
  
 }
+#total-price
+{
+  margin-top:20px; 
+  font-size:20px; 
+  font-weight:bold;
+  justify-content: right;
+}

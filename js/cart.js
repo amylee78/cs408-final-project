@@ -52,7 +52,7 @@
     }
  
       
-    // Automatically load items when page loads
+    // Automatically loads items when page loads
       window.onload = loadCartItems;
 
       

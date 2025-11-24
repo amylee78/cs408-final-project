@@ -16,13 +16,10 @@ function loadCommissionTypes() {
                 option.textContent = `${item.type} — $${item.price}`;
                 select.appendChild(option);
             });
-        } else {
+        } 
+        else {
             alert("Error loading commission prices");
         }
-    };
-
-    xhr.onerror = function() {
-        alert("Network error while loading commission prices");
     };
 
     xhr.send();
@@ -30,10 +27,11 @@ function loadCommissionTypes() {
 
  document.getElementById("send-data").onclick = function() {
   
-    const name = document.getElementById("new-name").value.trim();
-    const email = document.getElementById("new-email").value.trim();
+    const name = document.getElementById("new-name").value;
+    const email = document.getElementById("new-email").value;
     const type = document.getElementById("commission-type").value;
-    const description = document.getElementById("new-description").value.trim();
+    const species = document.getElementById("new-species").value;
+    const description = document.getElementById("new-description").value;
 
 
     // Generates a unique ID
@@ -46,15 +44,12 @@ function loadCommissionTypes() {
     xhr.setRequestHeader("Content-Type", "application/json");
 
      xhr.addEventListener("load", function () {
-        alert("Your inquiry has been submitted!");
+        alert("Your commission form has been submitted!");
         
     });
 
     
-    if (!name || !email || !type || !description) {
-        alert("Please fill in all fields before submitting.");
-        return;
-    }
+    
 
        if (!email.includes("@") || !email.includes(".com")  )
     {
@@ -65,7 +60,8 @@ function loadCommissionTypes() {
         id: id,
         name: name,
         email: email,
-        type: type,        
+        type: type,
+        species: species,        
         description: description
     }));
 
@@ -73,6 +69,7 @@ function loadCommissionTypes() {
     document.getElementById("new-name").value = "";
     document.getElementById("new-email").value = "";
     document.getElementById("commission-type").value = "";
+     document.getElementById("new-species").value = "";
     document.getElementById("new-description").value = "";
 
     

@@ -24,14 +24,14 @@ document.getElementById("send-data").onclick = function () {
         
     });
 
-      if (!name || !email || !topic || !description) {
+    if (!name || !email || !topic || !description) {
         alert("Please fill in all fields before submitting.");
         return;
     }
 
     if (!email.includes("@") || !email.includes(".com")  )
     {
-       alert("email must contain a @ and a .com , please try again")
+       alert("email must contain a @ and a .com , please try again");
     }
    
 

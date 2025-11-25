@@ -28,7 +28,7 @@ a{
 }
 
 
-table{
+table,.cardCheckout{
  border-style: solid;
  border-radius: 12px;
  padding: 10px;
@@ -38,6 +38,20 @@ table{
 
 }
 
+.cardCheckout
+{
+  max-width: 400px; 
+}
+
+ input
+{
+   text-align: center;
+}
+
+ #card-expiration, #card-cvc
+ {
+   max-width:50px;
+ }
 
  th, td {
   border: 1px solid;

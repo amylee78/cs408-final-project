@@ -49,12 +49,16 @@ function loadCommissionTypes() {
     });
 
     
-    
-
-       if (!email.includes("@") || !email.includes(".com")  )
-    {
-       alert("email must contain a @ and a .com , please try again")
+    if (!name || !email || !type || !species || !description) {
+        alert("Please fill in all fields before submitting.");
+        return;
     }
+
+     if (!email.includes("@") || !email.includes(".com")  )
+      {
+       alert("email must contain a @ and a .com , please try again");
+       return;
+      }
 
       xhr.send(JSON.stringify({
         id: id,

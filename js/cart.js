@@ -50,12 +50,65 @@
          });
      xhr.send();
     }
- 
-      
-    // Automatically loads items when page loads
-      window.onload = loadCartItems;
 
-      
+ function checkout() {
+
+  let xhr = new XMLHttpRequest();
+
+  xhr.addEventListener("load", function () {
+    let data = JSON.parse(xhr.responseText);
+
+
+    
+    let total = 0;
+    data.forEach(function (item) {
+      total += item.price;
+    });
+
+    let name = document.getElementById("card-name").value;
+    let cardNumber = document.getElementById("card-number").value;
+    let expiration = document.getElementById("card-expiration").value;
+    let cvc = document.getElementById("card-cvc").value;
+
+    if (!name || !cardNumber || !expiration || !cvc) {
+      alert("Please fill out all card fields.");
+      return;
+    }
+
+    let payXhr = new XMLHttpRequest();
+    payXhr.open("PUT", "https://ysx7n7v4j6.execute-api.us-east-2.amazonaws.com/card");
+    payXhr.setRequestHeader("Content-Type", "application/json");
 
 
 
+    payXhr.send(JSON.stringify({
+      cardNumber: cardNumber,
+      name: name,
+      expiration: expiration,
+      cvc: cvc,
+      totalPrice: total
+    }));
+
+    
+    document.getElementById("card-name").value = "";
+    document.getElementById("card-number").value = "";
+    document.getElementById("card-expiration").value = "";
+    document.getElementById("card-cvc").value = "";
+  });
+
+  
+     xhr.addEventListener("load", function () {
+        alert("payment sucessful");
+        
+    });
+
+  xhr.open("GET", "https://27izq2bl24.execute-api.us-east-2.amazonaws.com/cart");
+  xhr.send();
+}
+
+
+
+window.onload = function () {
+  loadCartItems();
+  document.getElementById("checkout").onclick = checkout;
+};

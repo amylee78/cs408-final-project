@@ -58,7 +58,6 @@
   xhr.addEventListener("load", function () {
     let data = JSON.parse(xhr.responseText);
 
-
     
     let total = 0;
     data.forEach(function (item) {
@@ -88,6 +87,15 @@
       cvc: cvc,
       totalPrice: total
     }));
+
+         // --- CLEAR TABLE WITHOUT CALLING AWS ---
+      let table = document.getElementById("loaded-items");
+      while (table.rows.length > 1) {
+        table.deleteRow(1);
+      }
+      document.getElementById("total-price").textContent = "Total: $0.00";
+    
+    
 
     
     document.getElementById("card-name").value = "";

@@ -12,28 +12,30 @@
 <body>
 
 
-  <div class="container"></div>
+  <div class="layout">
+    <div class="navBar">
+      <h1>commission page</h1>
+        <nav>
+        <ul>
+          <li>
+            <a href="index.html">Home</a>
+          </li>
+          <li>
+            <a href="terms.html">Terms and Services</a>
+          </li> 
+          <li>
+            <a href="commission.html">Commission</a>
+          </li>
+          <li>
+            <a href="cart.html">Shopping Cart</a>
+          </li>
+        </ul>
+      </nav>
+    </div> <!-- div for navBar class -->
+    
+    <div class="content1">
 
-  
-  <h1>commission page</h1>
- 
-  <nav>
-   <ul>
-    <li>
-        <a href="index.html">Home</a>
-      </li>
-      <li>
-        <a href="terms.html">Terms and Services</a>
-      </li> 
-      <li>
-        <a href="commission.html">Commission</a>
-      </li>
-      <li>
-        <a href="cart.html">Shopping Cart</a>
-      </li>
-   </ul>
- </nav>
-
+      
     <table id="lineart">
       <tr>
         <th colspan="3"> Lineart</th>
@@ -65,7 +67,7 @@
 
     </table> <!-- lineart table -->
 
-    <table id="color"  >
+    <table id="color" >
      <tr>
       <th colspan="3"> Color</th>
      </tr>
@@ -101,7 +103,7 @@
       </tr>
     </table> <!-- end of color table -->
 
-    <table id="lineless"  >
+    <table id="lineless" >
       <tr>
         <th colspan="3"> lineless</th>
       </tr>
@@ -138,7 +140,7 @@
 
     </table> <!--end of lineless table -->
 
-    <table id="design"  >
+    <table id="design">
      <tr>
       <th colspan="3"> Character design</th>
      </tr>
@@ -171,86 +173,95 @@
        <td >to be written</td>
        <td>$90</td>
       </tr>
+    
+     </table> <!--end of design table -->
 
-    </table> <!--end of design table -->
 
-     <table id="scene"  >
-     <tr>
-      <th colspan="3">illustration</th>
-     </tr>
+    </div> <!-- div for cmtemt1 class -->
 
+    <div class="content2">
+
+      
+      <table id="scene"  >
       <tr>
-       <th>Type</th>
-       <th>description</th>
-       <th>Price</th>
+        <th colspan="3">illustration</th>
       </tr>
 
+        <tr>
+        <th>Type</th>
+        <th>description</th>
+        <th>Price</th>
+        </tr>
+
+        <tr>
+        <th>simple</th>
+        <td >to be written</td>
+        <td>$75</td>
+        </tr>
+
+        <tr>
+          <th>semi-complex</th>
+        <td >to be written</td>
+        <td>$100</td>
+        </tr>
+
+        <tr>
+          <th>complex</th>
+        <td >to be written</td>
+        <td>$150</td>
+        </tr>
+
+        <tr>
+        <th>Paintery</th>
+        <td >to be written</td>
+        <td>$200</td>
+        </tr>
+
+      </table> <!--end of scene table -->
+
+
+      <table id="watercolor">
       <tr>
-      <th>simple</th>
-       <td >to be written</td>
-       <td>$75</td>
+        <th colspan="3"> Watercolor pet portrait</th>
       </tr>
 
-      <tr>
-         <th>semi-complex</th>
-       <td >to be written</td>
-       <td>$100</td>
-      </tr>
+        <tr>
+        <th>Type</th>
+        <th>description</th>
+        <th>Price</th>
+        </tr>
 
-      <tr>
-         <th>complex</th>
-       <td >to be written</td>
-       <td>$150</td>
-      </tr>
+        <tr>
+        <th>headshot</th>
+        <td >to be written</td>
+        <td>$60</td>
+        </tr>
 
-      <tr>
-      <th>Paintery</th>
-       <td >to be written</td>
-       <td>$200</td>
-      </tr>
+        <tr>
+        <th>bust</th>
+        <td >to be written</td>
+        <td>$90</td>
+        </tr>
 
-    </table> <!--end of scene table -->
+        <tr>
+          <th>full body</th>
+        <td >to be written</td>
+        <td>$120</td>
+        </tr>
 
-
-    <table id="watercolor">
-     <tr>
-      <th colspan="3"> Watercolor pet portrait</th>
-     </tr>
-
-      <tr>
-       <th>Type</th>
-       <th>description</th>
-       <th>Price</th>
-      </tr>
-
-      <tr>
-      <th>headshot</th>
-       <td >to be written</td>
-       <td>$60</td>
-      </tr>
-
-      <tr>
-       <th>bust</th>
-       <td >to be written</td>
-       <td>$90</td>
-      </tr>
-
-      <tr>
-        <th>full body</th>
-       <td >to be written</td>
-       <td>$120</td>
-      </tr>
-
-      <tr>
-       <th> + 1 full body</th>
-       <td >to be written</td>
-       <td>$40</td>
-      </tr>
-    </table> <!--end of watercolor table -->
+        <tr>
+        <th> + 1 full body</th>
+        <td >to be written</td>
+        <td>$40</td>
+        </tr>
+      </table> <!--end of watercolor table -->
 
 
+    </div> <!-- div  forcontent2 class -->
 
-     <div class="section2">
+    <div class="form">
+
+        <div class="section2">
           <!-- This form field allows user to enter ID, Name, and Price -->
       <h2>Commission form</h2>
         <p> fill out the form here. to be written </p>
@@ -274,7 +285,19 @@
             <br> <br>
           <button type="button" id="send-data">Add to cart</button>
         </form>
-    </div>
+    </div>  <!-- div for section2 class -->
+
+    
+
+    </div> <!-- div for form class -->
+
+
+
+  </div> <!-- div for layout class -->
+
+  
+
+
 
 
  <script src="/js/form.js"></script>

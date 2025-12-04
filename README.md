@@ -21,3 +21,10 @@ It will be similar to the inventory table from the previous lab. But in this cas
  ### The commission page overview
 
  ![cart](cart.png)
+
+ ## sources used
+   - wip will propery format soon
+
+   
+
+   https://stackoverflow.com/questions/20994768/how-to-reduce-length-of-uuid-generated-using-randomuuid

@@ -36,7 +36,6 @@ text-align: center;
 textarea
 {
   padding-top: 10px;
- 
  height: 90px;
   width: 300px;
   text-align: left;
@@ -51,3 +50,5 @@ th,td{
      word-wrap: break-word;
      background-color: rgb(255, 255, 255);
 }
+
+

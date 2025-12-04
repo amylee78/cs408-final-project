@@ -88,15 +88,13 @@
       totalPrice: total
     }));
 
-         // --- CLEAR TABLE WITHOUT CALLING AWS ---
+         //clears table without deleting in aws
       let table = document.getElementById("loaded-items");
       while (table.rows.length > 1) {
         table.deleteRow(1);
       }
       document.getElementById("total-price").textContent = "Total: $0.00";
     
-    
-
     
     document.getElementById("card-name").value = "";
     document.getElementById("card-number").value = "";

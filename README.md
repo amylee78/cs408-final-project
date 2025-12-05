@@ -25,6 +25,6 @@ It will be similar to the inventory table from the previous lab. But in this cas
  ## sources used
    - wip will propery format soon
 
-   
-
+  
    https://stackoverflow.com/questions/20994768/how-to-reduce-length-of-uuid-generated-using-randomuuid
+   https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Values/repeat

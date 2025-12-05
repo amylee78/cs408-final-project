@@ -58,7 +58,9 @@ th,td{
   display:grid;
   grid-template-areas:
     "navBar navBar"
+    "images1 images1"
     "content1 content1"
+    "images2 images2"
     "content2 content2"
      "form info";
   grid-template-columns: 2fr 2fr;
@@ -74,6 +76,18 @@ th,td{
 
 }
 
+
+.images1 {
+  grid-area: images1;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+
+  text-align: center;
+   justify-items: center;  
+  align-items: center;
+  
+}
+
 .content1 {
   grid-area: content1;
   display: grid;
@@ -82,6 +96,19 @@ th,td{
   text-align: center;
   
 }
+
+.images2 {
+  grid-area: images2;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+
+  text-align: center;
+   justify-items: center;  
+  align-items: center;
+  
+}
+
+
 
 .content2 {
   grid-area: content2;

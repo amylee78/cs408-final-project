@@ -8,6 +8,8 @@ For this project, I am aiming for  Artist commission page.  The general theme of
 
 It will be similar to the inventory table from the previous lab. But in this case, it will be as follows. Type of commission, probably shortened, such as watercolor pet headshot to  W headshot, etc, Description ( via user input, price), and down below a delete button. then, down below would be the total price. Then the user will be able to add in "credit card info"  and their email, and basic info like first name and last name. this will send info to AWS, like the commission inquiry. It will be a mock credit card info data. Once the user clicks purchase. then there will be a pop-up that says "payment successful" or something like that. My goal is to get a better understanding of AWS, as I am pretty unfamiliar with how it sends and retrieves data in a more complicated way. I think it will also be useful in the long run because I do want to sell my art, and it will be a good start.
 
+
+
 ## Project Wireframe
 
  ### #The Index page brief overview. 
@@ -21,6 +23,14 @@ It will be similar to the inventory table from the previous lab. But in this cas
  ### The commission page overview
 
  ![cart](cart.png)
+
+ ## Stretch Goals
+  - allow user to select serval colors
+  - allow users to put in images into their commison form
+  - store commison form somewhere else after user checks out
+  - maybe a search button for terms and services page
+  
+
 
  ## sources used
    - wip will propery format soon

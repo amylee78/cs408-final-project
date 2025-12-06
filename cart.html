@@ -10,50 +10,59 @@
 </head>
 
 <body>
-  <h1>cart page</h1>
- 
- <nav>
-  <ul>
-    <li>
-       <a href="index.html">Home</a>
-    </li>
-     <li>
-      <a href="terms.html">Terms and Services</a>
-    </li>
-    
-    <li>
-      <a href="commission.html">Commission</a>
-    </li>
-    <li>
-      <a href="cart.html">Shopping Cart</a>
-    </li>
-  </ul>
- </nav>
+
+  <div class="layout">
+   <div class="navBar">
+
+      <h1>Shopping Cart <img src="img/cart.png" alt="placeholder" width="80" height="80" class="cartLogo"></h1>
+      
 
  
+      <nav>
+        <ul>
+          <li>
+            <a href="index.html">Home</a>
+          </li>
+          <li>
+            <a href="terms.html">Terms and Services</a>
+          </li>
+          
+          <li>
+            <a href="commission.html">Commission</a>
+          </li>
+          <li>
+            <a href="cart.html">Shopping Cart</a>
+          </li>
+        </ul>
+      </nav>
+   </div>  <!-- div for nav bar class -->
 
- <div class="cartTable">
+   <div class="cart">
 
-   <table id="loaded-items">
-       
-            <tr>
-                <th>ID</th>
-                <th>Type</th>
-                <th>Price</th>
-                <th>Description</th>
-                <th>Delete</th>
-            </tr>
+      <div class="cartTable">
+
+        <table id="loaded-items">
+            
+                  <tr>
+                      <th>ID</th>
+                      <th>Type</th>
+                      <th>Price</th>
+                      <th>Description</th>
+                      <th>Delete</th>
+                  </tr>
+          
+          </table>
+      
+      <p  id="total-price">Total Price: $0.00</p> </div>
     
-    </table>
-    
-  <p  id="total-price">Total Price: $0.00</p>
+   </div> <!-- div for cart class -->
 
- </div>
+   <div class="card">
 
-   <div class="cardCheckout">
+    <div class="cardCheckout">
      
-     <h2>Card Checkout</h2>
-     <p> fill out the form here. to be written </p>
+     <h2>Card Checkout <img src="img/creditLogo.png" alt="placeholder" width="120" height="30" class="cardLogo"></h2>
+     <p> Please enter your credit card info here. </p>
      <form>
         
        <label for="card-name">  Name on Card: </label>
@@ -64,16 +73,23 @@
        <input type="text" id="card-number" name="card number"  placeholder="xxxx xxxx xxxx xxxx" >
        <br> <br>
         <label for="card-expiration">Expiration date: </label>
-      <input id="card-expiration" name="card expiration" placeholder="mm/yy"></input>
+      <input id="card-expiration" name="card expiration" placeholder="mm/yy">
       <br> <br>
        <label>CVC:</label>
       <input type="text" id="card-cvc" placeholder="xxx">
        <br><br>
+      </form>
+     <button type="button" id="checkout">checkout</button> 
+     </div>  <!-- div for cardCheckout class -->
+
+  
+  </div> <!-- div for card class -->
 
 
-     <button type="button" id="checkout">checkout</button>
-    </div>
+  </div>  <!-- div for layout class -->
+
  
+
 
 <script src="/js/cart.js"> </script>
 

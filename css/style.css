@@ -4,16 +4,21 @@ body {
   padding-right: 10px;
 }
 
+h2{
+  text-align: center;
+  font-size: 30px;
+}
+
 
 .section2 {
   text-align: center;
-  padding: 50px;
+  padding: 30px;
   border-style: dashed;
   border-width: 5px;
-  margin-left: 20px;
+  margin-left: 30px;
   margin-bottom: 20px;
   margin-top: 20px;
-  max-width: 300px;
+  max-width: 500px;
 }
 
 textarea {
@@ -28,16 +33,16 @@ nav {
   padding: .5em;
 }
   
-  nav ul {
-    margin: 0;
-    padding-bottom: 10px;
-    padding-top: 10px;
-    list-style: none;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-evenly; 
-    font-size: 25px;
-  }
+nav ul {
+  margin: 0;
+  padding-bottom: 10px;
+  padding-top: 10px;
+  list-style: none;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly; 
+  font-size: 25px;
+}
 
 .navBar a {
   text-decoration: none;
@@ -63,14 +68,63 @@ th,td{
  font-size: 25px;
 }
 
+
+ .layout {
+  display:grid;
+  grid-template-areas:
+    "navBar navBar"
+    "content photography"
+    " inquiry artInfo";
+  grid-template-columns: 3fr 2fr;
+  gap: 10px;
+  padding: 10px;
+  row-gap: 20px;
   
-.examples {
+}
+
+.navBar {
+  grid-area: navBar;
+  text-align: center;
+
+}
+
+
+.content {
+ grid-area: content;
+  padding: 20px;
+  gap: 2px;
+}
+
+  
+.photography {
+  grid-area: photography;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+  gap: 2px;
+}
+
+.artInfo {
+  grid-area: artInfo;
+  gap: 2px;
+}
+
+.inquiry {
+ grid-area:inquiry;
+
+  gap: 2px;
+}
+
+.photos {
   list-style: none;
   margin: 0;
   padding: 0;
   display: grid;
-  grid-template-columns: 1fr 1fr; 
+  grid-template-columns: repeat(3, 1fr);
   gap: 2px;
+  
 }
+
+  
 
  

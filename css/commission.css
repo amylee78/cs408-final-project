@@ -57,7 +57,9 @@ th,td{
  .layout {
   display:grid;
   grid-template-areas:
+  
     "navBar navBar"
+    "title title"
     "images1 images1"
     "content1 content1"
     "images2 images2"
@@ -72,6 +74,12 @@ th,td{
 
 .navBar {
   grid-area: navBar;
+  text-align: center;
+
+}
+
+.title {
+  grid-area: title;
   text-align: center;
 
 }
@@ -132,6 +140,8 @@ th,td{
   grid-area: info;
   display: grid;
   padding: 40px;
+  justify-items: center;  
+  align-items: center;
   
 
 }

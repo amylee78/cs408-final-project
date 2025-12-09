@@ -42,23 +42,23 @@
     xhr.send();
 }
 
-  function deleteItem(id) {
-     let xhr = new XMLHttpRequest();
-      xhr.open("DELETE", `https://27izq2bl24.execute-api.us-east-2.amazonaws.com/cart/${id}`);
-      xhr.addEventListener("load", function () {
-        loadCartItems(); 
-         });
-     xhr.send();
-    }
+function deleteItem(id) {
+    let xhr = new XMLHttpRequest();
+    xhr.open("DELETE", `https://27izq2bl24.execute-api.us-east-2.amazonaws.com/cart/${id}`);
+    xhr.addEventListener("load", function () {
+      loadCartItems(); 
+        });
+    xhr.send();
+  }
 
- function checkout() {
-
+function checkout() {
+ 
   let xhr = new XMLHttpRequest();
 
-  xhr.addEventListener("load", function () {
+    xhr.onload = function () {
+
     let data = JSON.parse(xhr.responseText);
 
-    
     let total = 0;
     data.forEach(function (item) {
       total += item.price;
@@ -77,8 +77,29 @@
     let payXhr = new XMLHttpRequest();
     payXhr.open("PUT", "https://ysx7n7v4j6.execute-api.us-east-2.amazonaws.com/card");
     payXhr.setRequestHeader("Content-Type", "application/json");
+    
+    payXhr.onload = function () {
+    
+      alert("Payment successful!");
 
+      
+      let checkoutXhr = new XMLHttpRequest();
+      checkoutXhr.open("DELETE", "https://27izq2bl24.execute-api.us-east-2.amazonaws.com/cart");
 
+      checkoutXhr.onload = function () {
+      
+        loadCartItems();
+        document.getElementById("total-price").textContent = "Total: $0.00";
+      };
+
+      checkoutXhr.send();
+
+  
+      document.getElementById("card-name").value = "";
+      document.getElementById("card-number").value = "";
+      document.getElementById("card-expiration").value = "";
+      document.getElementById("card-cvc").value = "";
+    };
 
     payXhr.send(JSON.stringify({
       cardNumber: cardNumber,
@@ -87,34 +108,13 @@
       cvc: cvc,
       totalPrice: total
     }));
-
-         //clears table without deleting in aws
-      let table = document.getElementById("loaded-items");
-      while (table.rows.length > 1) {
-        table.deleteRow(1);
-      }
-      document.getElementById("total-price").textContent = "Total: $0.00";
-    
-    
-    document.getElementById("card-name").value = "";
-    document.getElementById("card-number").value = "";
-    document.getElementById("card-expiration").value = "";
-    document.getElementById("card-cvc").value = "";
-  });
-
-  
-     xhr.addEventListener("load", function () {
-        alert("payment sucessful");
-        
-    });
+  };
 
   xhr.open("GET", "https://27izq2bl24.execute-api.us-east-2.amazonaws.com/cart");
   xhr.send();
 }
 
-
-
 window.onload = function () {
-  loadCartItems();
+  loadCartItems(); //automatically loads table
   document.getElementById("checkout").onclick = checkout;
 };

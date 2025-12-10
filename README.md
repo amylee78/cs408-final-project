@@ -43,3 +43,6 @@ It will be similar to the inventory table from the previous lab. But in this cas
 
    https://www.flaticon.com/free-icon/shopping-cart_875985
 
+
+
+

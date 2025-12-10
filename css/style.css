@@ -2,6 +2,20 @@
 body {
   padding-left: 10px;
   padding-right: 10px;
+  cursor: url("../img/paw.png") , auto;
+  background-image: url("../img/background.png");
+  background-size: contain;
+  background-position: center;
+  
+}
+
+h1{
+ text-shadow: 4px 4px 3px rgb(164, 160, 160);
+ background-color: rgba(255, 255, 255, 0.663);
+ display: inline-block;
+ padding: 40px;
+ font-size: 50px;
+
 }
 
 h2{
@@ -19,6 +33,7 @@ h2{
   margin-bottom: 20px;
   margin-top: 20px;
   max-width: 500px;
+  background-color:  rgba(255, 255, 255, 0.85);
 }
 
 textarea {
@@ -30,7 +45,10 @@ textarea {
 
 nav {
   background-color: #d5fff8;
-  padding: .5em;
+  padding: 10px;
+  font-weight: bold;
+
+ 
 }
   
 nav ul {
@@ -49,15 +67,21 @@ nav ul {
   color:rgb(0, 15, 29);
 }
 
+a:hover {
+  color: rgb(145, 7, 200);
+  cursor: url("../img/paw.png") , auto;
+}
+
 #art-info {
 border-spacing: 5px;
 border: 4px solid;
 background-color: rgb(238, 222, 255);
 }
 
+
+
 th,td{
   border: 1px solid black;
-  border-collapse: collapse;
   padding: 8px;
   max-width: 200px;
   word-wrap: break-word;
@@ -80,11 +104,13 @@ th,td{
   padding: 10px;
   row-gap: 20px;
   
+  
 }
 
 .navBar {
   grid-area: navBar;
   text-align: center;
+
 
 }
 
@@ -93,6 +119,11 @@ th,td{
  grid-area: content;
   padding: 20px;
   gap: 2px;
+  background-color: rgba(255, 255, 255, 0.85);
+  border-style: solid;
+  border-width: 4px;
+  border-color: #380031;
+
 }
 
   
@@ -102,6 +133,8 @@ th,td{
   padding: 0;
   text-align: center;
   gap: 2px;
+
+  
 }
 
 .artInfo {
@@ -111,7 +144,6 @@ th,td{
 
 .inquiry {
  grid-area:inquiry;
-
   gap: 2px;
 }
 
@@ -123,6 +155,12 @@ th,td{
   grid-template-columns: repeat(3, 1fr);
   gap: 2px;
   
+}
+
+.photo {
+  background-color: #dab5e4;
+  border-style: dashed;
+  padding: 10px;
 }
 
   

@@ -31,6 +31,7 @@ function loadCommissionTypes() {
     const email = document.getElementById("new-email").value;
     const type = document.getElementById("commission-type").value;
     const species = document.getElementById("new-species").value;
+    const reference = document.getElementById("new-reference").value;
     const description = document.getElementById("new-description").value;
 
 
@@ -49,7 +50,7 @@ function loadCommissionTypes() {
     });
 
     
-    if (!name || !email || !type || !species || !description) {
+    if (!name || !email || !type || !species || !reference || !description) {
         alert("Please fill in all fields before submitting.");
         return;
     }
@@ -65,7 +66,8 @@ function loadCommissionTypes() {
         name: name,
         email: email,
         type: type,
-        species: species,        
+        species: species,
+        reference: reference,        
         description: description
     }));
 
@@ -73,7 +75,8 @@ function loadCommissionTypes() {
     document.getElementById("new-name").value = "";
     document.getElementById("new-email").value = "";
     document.getElementById("commission-type").value = "";
-     document.getElementById("new-species").value = "";
+    document.getElementById("new-species").value = "";
+    document.getElementById("new-reference").value = "";
     document.getElementById("new-description").value = "";
 
     

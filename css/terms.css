@@ -2,10 +2,8 @@ body {
   padding-left: 10px;
   padding-right: 10px;
   cursor: url("../img/paw.png") , auto;
-
   text-align: center;
  
-  
 }
 
 
@@ -51,4 +49,13 @@ a {
  a:hover {
   color: rgb(145, 7, 200);
   cursor: url("../img/paw.png") , auto;
+}
+
+
+.pugLogo
+{
+  width: 150px;
+  height: 150px;
+  position: relative;
+  top: 40px;
 }

@@ -192,6 +192,15 @@ th,td{
   font-weight: bold;
  
 }
+
+.pugLogo
+{
+  width: 150px;
+  height: 150px;
+  position: relative;
+  top: 40px;
+}
+
   
 
 

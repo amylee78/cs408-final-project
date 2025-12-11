@@ -15,19 +15,22 @@ h1{
  display: inline-block;
  padding: 40px;
  font-size: 50px;
+ 
+
 
 }
 
 h2{
   text-align: center;
   font-size: 30px;
+
 }
 
 
 .section2 {
   text-align: center;
   padding: 30px;
-  border-style: dashed;
+  border-style: solid;
   border-width: 5px;
   margin-left: 30px;
   margin-bottom: 20px;
@@ -162,6 +165,16 @@ th,td{
   border-style: dashed;
   padding: 10px;
 }
+
+
+.pugLogo
+{
+  width: 150px;
+  height: 150px;
+  position: relative;
+  top: 40px;
+}
+
 
   
 

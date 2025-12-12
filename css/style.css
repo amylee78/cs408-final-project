@@ -22,20 +22,20 @@ h1{
 
 h2{
   text-align: center;
-  font-size: 30px;
+  font-size: 40px;
 
 }
 
 
 .section2 {
   text-align: center;
-  padding: 30px;
+  padding: 40px;
   border-style: solid;
   border-width: 5px;
   margin-left: 30px;
   margin-bottom: 20px;
   margin-top: 20px;
-  max-width: 500px;
+  max-width: 600px;
   background-color:  rgba(255, 255, 255, 0.85);
 }
 
@@ -50,8 +50,7 @@ nav {
   background-color: #d5fff8;
   padding: 10px;
   font-weight: bold;
-
- 
+  
 }
   
 nav ul {
@@ -63,6 +62,7 @@ nav ul {
   flex-direction: row;
   justify-content: space-evenly; 
   font-size: 25px;
+  
 }
 
 .navBar a {
@@ -81,9 +81,7 @@ border: 4px solid;
 background-color: rgb(238, 222, 255);
 }
 
-
-
-th,td{
+th,td {
   border: 1px solid black;
   padding: 8px;
   max-width: 200px;
@@ -107,13 +105,11 @@ th,td{
   padding: 10px;
   row-gap: 20px;
   
-  
 }
 
 .navBar {
   grid-area: navBar;
   text-align: center;
-
 
 }
 
@@ -137,7 +133,6 @@ th,td{
   text-align: center;
   gap: 2px;
 
-  
 }
 
 .artInfo {
@@ -175,7 +170,21 @@ th,td{
   top: 40px;
 }
 
+p {
+  font-size: 20px;
+}
 
+.content > ul {
+  font-size: 20px;
+}
+
+.content > ul, table {
+  font-size: 20px;
   
+}
+ tr {
+  padding: 10px;
+ }
+
 
  

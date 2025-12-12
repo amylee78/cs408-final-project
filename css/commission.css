@@ -18,21 +18,22 @@ h1{
 
 }
 
+h2 {
+  font-size:30px;
+}
+
 .overview {
-   background-color: #dab5e4;
-   display: inline-block;
+  background-color: #dab5e4;
+  display: inline-block;
   border-style: solid;
   padding: 20px;
  
-  
 }
 
- 
  nav {
     background-color: #d5fff8;
     padding: 10px;
     font-weight: bold;
-   
   }
  
  nav ul {

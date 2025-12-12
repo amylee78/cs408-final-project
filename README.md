@@ -37,11 +37,17 @@ It will be similar to the inventory table from the previous lab. But in this cas
 
   
    https://stackoverflow.com/questions/20994768/how-to-reduce-length-of-uuid-generated-using-randomuuid
+   
    https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Values/repeat
     
     https://freepngimg.com/png/25826-major-credit-card-logo-image
 
    https://www.flaticon.com/free-icon/shopping-cart_875985
+
+   https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Values/fit-content
+
+   https://stackoverflow.com/questions/2835140/how-do-i-link-to-part-of-a-page-hash
+
 
 
 

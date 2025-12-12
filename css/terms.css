@@ -2,8 +2,10 @@ body {
   padding-left: 10px;
   padding-right: 10px;
   cursor: url("../img/paw.png") , auto;
-  text-align: center;
- 
+  background-image: url("../img/background.png");
+  background-size: contain;
+  background-position: center;
+  
 }
 
 
@@ -26,6 +28,7 @@ h2{
     background-color: #d5fff8;
     padding: 10px;
     font-weight: bold;
+     font-size: 25px;
    
   }
  
@@ -58,4 +61,75 @@ a {
   height: 150px;
   position: relative;
   top: 40px;
+}
+
+
+ .layout {
+  display:grid;
+  grid-template-areas:
+    "navBar navBar"
+    "shortcut conditions";
+  grid-template-columns: 2fr 3fr;
+  grid-template-rows: auto 1fr;
+  gap: 10px;
+  padding: 10px;
+  row-gap: 20px;
+  
+}
+
+.navBar {
+  grid-area: navBar;
+  text-align: center;
+
+}
+
+
+.shortcut {
+ grid-area: shortcut;
+  padding: 20px;
+  gap: 40px;
+ height: fit-content; 
+ list-style: none;
+ font-size: 30px;
+
+}
+
+.shortcut > ul > li  {
+  padding: 25px;
+  background-color: rgb(253, 255, 254);
+  list-style: none;
+  text-align: center;
+
+}
+
+.shortcut li:hover {
+  background-color: #e9bdf8;
+}
+
+  
+.conditions {
+  grid-area: conditions;
+ background-color: rgba(253, 255, 254, 0.849);
+ padding: 30px;
+  gap: 2px;
+
+}
+
+.title {
+  font-size: 50px;
+  background-color: #dab5e4;
+  border-style: dashed;
+  padding: 20px;
+}
+
+.conditions > h2 {
+  font-size: 30px;
+}
+
+h3 {
+  font-size: 25px;
+}
+
+ p {
+  font-size: 20px;
 }

@@ -91,6 +91,8 @@ a {
  height: fit-content; 
  list-style: none;
  font-size: 30px;
+ position: sticky;
+  top: 0;
 
 }
 
@@ -99,6 +101,7 @@ a {
   background-color: rgb(253, 255, 254);
   list-style: none;
   text-align: center;
+    display: inline-block;
 
 }
 

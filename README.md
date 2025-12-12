@@ -1,28 +1,73 @@
 # Final project- Commison page
 
-## Project Spec
+## Project overview
 
-For this project, I am aiming for  Artist commission page.  The general theme of this project is an Art commission page of my art. Specifically, an Animal art commission page, featuring different pieces of art I have done featuring animals, ranging from sketches to scenes. The target audience is animal lovers, pet owners, writers, and other artists. Really, anyone who wishes to get art of their pet or animal characters. There will be 3 pages. The first is the landing/index page. It would be an introductory page. It would have an introduction, about, prices, several examples, and how to navigate the webpage. There will be a navbar that links to the other webpages. The example art on this page will be static and set in the HTML. The data in this page will be a commission inquiry where they can put their name, email, type of commission, details, and submit button. Which will be sent to AWS. It will be for any person curious about a specific commission, like if it is possible without having to purchase anything. I'm not quite sure how exactly I will lay it out, but I am planning on looking at other artists portfolio websites for inspiration. 
+The general theme of this project is an Art commission page of my art. Specifically, an Animal art commission page, featuring different pieces of art I have done featuring animals, ranging from lineart to scenes to watercolor portraits.
 
- The second page will be a shopping cart. This page will retrieve data from AWS, where potential customers can choose what type of commission they want (headshot, watercolor pet portrait etc) and add it to the list with the prices. the customers can add a short description on each item on what they want. such as a watercolor if my dog, Walter etc, it will be the Post data in AWS. There will be a list with examples and their prices. The user will then select the type of commission they want via a drop-down menu. The user would also be able to write a short description of what they want on said commission. Sort of like the name portion in the previous lab.  Once the user puts their info, it will be sent to the checkout page. Where it gets the list of all the commission data. This will take them to the checkout page, which is the 3rd page. 
+Overall there are 4 pages in this site.The first is the landing/index page.  The second page is the Terms and conditions page, The third page is a commission page whre user can submit a commison form that will get sent to the shopping cart page. Finally the fourth and last page is the shopping cart page, where the user can preview their purchase,delete and enter their card details. Once they enter their card details, their commission data will be cleared from the AWS and front end.
 
-It will be similar to the inventory table from the previous lab. But in this case, it will be as follows. Type of commission, probably shortened, such as watercolor pet headshot to  W headshot, etc, Description ( via user input, price), and down below a delete button. then, down below would be the total price. Then the user will be able to add in "credit card info"  and their email, and basic info like first name and last name. this will send info to AWS, like the commission inquiry. It will be a mock credit card info data. Once the user clicks purchase. then there will be a pop-up that says "payment successful" or something like that. My goal is to get a better understanding of AWS, as I am pretty unfamiliar with how it sends and retrieves data in a more complicated way. I think it will also be useful in the long run because I do want to sell my art, and it will be a good start.
+This project will be built on CSS, javascript, HTML and data will be handled  through AWS services. Mainly Lambda, API Gateway, and DynamoDB. There it will store, retreive, and add new data.
+
+## Target Audience
+
+ The target audience is animal lovers, pet owners, writers, and other artists. Really, anyone who wishes to get art of their pet or animal characters. Other target audience could include
+ bussiness owners who wishes to get stickers or art  for their business to sell for profit.
 
 
+## Getting started
+
+To get started, clone this repository and run the following commands:
+
+```bash
+npm install
+```
+This will install the necessary dependencies for the project.
+
+## Navigating the website
+
+The home page an introductory page. It would have an introduction, about, prices, several examples, and how to navigate the webpage. There will be a navbar that links to the other webpages. The example art on this page will be static and set in the HTML. Users will be able to submit a commmission inquiry form. There it will be send to and stored in AWS. you can see it via <a href = "https://us-east-2.console.aws.amazon.com/dynamodbv2/home?region=us-east-2#item-explorer?operation=SCAN&table=http-amy-lee-commission-inquiry"> dynamoDb table </a>
+
+The second page will not have any AWS functionality. This page is preuly to give info on the terms 
+and conditions of purchasing my art. Such as credit , use and the process. The page will have a list at the side where it will jump to the subject  for easy acess. User must click on the subject such as 
+Getting started to do so. 
+
+The third page is a more detailed overview of the types of commission it has to offer and the prices 
+for each type. There is also a a decription. Scroll to the bottom to submitt a commison form that
+will be stored <a href= "https://us-east-2.console.aws.amazon.com/dynamodbv2/home?region=us-east-2#item-explorer?operation=SCAN&table=http-amy-lee-cart"> here </a>.
+
+It will then be send and displayed in the shopping cart page. However only the type, the price, the total price, and the description will be displayed. Each form submitted will have its own unique id
+ randomly generated. USer then can delete any form one by one. User then could if they want add in their card details. It is a mock credit card set up where the only thing it would do is send data to 
+ AWS . you can find it  <a href ="https://us-east-2.console.aws.amazon.com/dynamodbv2/home?region=us-east-2#item-explorer?operation=SCAN&table=http-amy-lee-credit-card"> here </a>. once the user checks out, it should clear the table.
+
+
+
+## What sort of data will it manage?
+
+Any user generated data will be stored and retreived from AWS services. All the AWS data manged is :
+ - commission inquiry form sent by users to a DynamoDb table. 
+ - commisson form sent by users
+ -  card details to check out 
+
+Other data stored through AWS is the flat rated commission prices stored in a AWS DynamoDB
+table. That data is retreived by the commission form Lambda and displayed through there.
+
+
+## Testing
+  due to time I was unable to add any related tests to this project.
 
 ## Project Wireframe
 
  ### #The Index page brief overview. 
 
-![index](index.png)
+<img src="img/index.png" alt="placeholder" width="500" height="400" >
 
 ### The commission page overview
 
- ![second](secondpage.png)
+<img src="img/secondpage.png" alt="placeholder" width="500" height="400" >
 
  ### The commission page overview
 
- ![cart](cart.png)
+<img src="img/cartWire.png" alt="placeholder" width="500" height="400" >
 
  ## Stretch Goals
   - allow user to select serval colors
@@ -33,10 +78,10 @@ It will be similar to the inventory table from the previous lab. But in this cas
 
 
  ## sources used
-   - wip will propery format soon
 
-  
-   https://stackoverflow.com/questions/20994768/how-to-reduce-length-of-uuid-generated-using-randomuuid
+   https://stackoverflow.com/questions/20994768/
+
+   how-to-reduce-length-of-uuid-generated-using-randomuuid
    
    https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Values/repeat
     
